@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.env.web</groupId>
-  <artifactId>ssh1</artifactId>
+  <artifactId>ssh</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>ssh1 Maven Webapp</name>
@@ -16,6 +16,16 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>ssh1</finalName>
+    <finalName>ssh</finalName>
+    <plugins>
+    	<plugin>
+    		<groupId>org.apache.tomcat.maven</groupId>
+    		<artifactId>tomcat6-maven-plugin</artifactId>
+    		<version>2.0-beta-1</version>
+    		<configuration>
+				<contextReloadable>true</contextReloadable>
+			</configuration>
+    	</plugin>
+    </plugins>
   </build>
 </project>
