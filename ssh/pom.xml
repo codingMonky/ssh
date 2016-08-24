@@ -1,31 +1,57 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.env.web</groupId>
-  <artifactId>ssh</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>ssh1 Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>ssh</finalName>
-    <plugins>
-    	<plugin>
-    		<groupId>org.apache.tomcat.maven</groupId>
-    		<artifactId>tomcat6-maven-plugin</artifactId>
-    		<version>2.0-beta-1</version>
-    		<configuration>
-				<contextReloadable>true</contextReloadable>
-			</configuration>
-    	</plugin>
-    </plugins>
-  </build>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.env.web</groupId>
+	<artifactId>ssh</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ssh1 Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<springversion>3.2.2.RELEASE</springversion>
+		<junitversion>4.9</junitversion>
+	</properties>
+	<dependencies>
+		<!-- 配置Junit4环境 spring依赖包 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junitversion}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 配置spring环境 -->
+		<!-- spring 基础环境 -->
+		<!-- 引入spring-context后，其他包自动引入进来 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${springversion}</version>
+		</dependency>
+		
+		
+		<!-- Junit4环境 spring依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${springversion}</version>
+		</dependency>
+
+
+
+	</dependencies>
+
+	<build>
+		<finalName>ssh</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat6-maven-plugin</artifactId>
+				<version>2.0-beta-1</version>
+				<configuration>
+					<contextReloadable>true</contextReloadable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
