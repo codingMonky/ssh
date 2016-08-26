@@ -42,12 +42,29 @@
 			<artifactId>struts2-core</artifactId>
 			<version>2.3.16</version>
 		</dependency>
-		
-		<!-- xwork 报错 -->
-		<!-- <dependency> <groupId>com.opensymphony</groupId> <artifactId>xwork-core</artifactId> 
-			<version>2.1.2</version> </dependency> -->
-
-
+		<!-- 添加Hibernate依赖 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.5.0-Final</version>
+		</dependency>
+		<!-- 添加Oracle驱动 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.1</version>
+		</dependency>
+		<!-- 添加日志规范依赖及其实现 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 	</dependencies>
 
