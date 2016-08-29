@@ -22,7 +22,10 @@ public class UserRoleBusiServiceImpl implements UserRoleBusiService {
 	@Override
 	public List<UserRole> queryUserRole() {
 		Session session = HibernateUtil.getSessionfactory().getCurrentSession();
-		return session.createQuery("from UserRole").list();
+		session.beginTransaction();
+		List list =session.createQuery("from UserRole").list();
+		session.getTransaction().commit();
+		return  list;
 	}
 	
 public static void main(String[] args) {
